@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nuôi Nam - Trang fundraising minh bạch và vui vẻ">
+    <meta name="og:title" content="Nuôi Nam">
+    <meta name="og:description" content="Donate để giúp Nam trang trải cuộc sống">
+    <title>Nuôi Nam - Hãy nuôi tôi một cách minh bạch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">NN</span>
+                <span class="logo-full">NUÔI NAM</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Trang chủ</a>
+                <a href="#why" class="nav-link">Tại sao</a>
+                <a href="#promise" class="nav-link">Cam kết</a>
+                <a href="#usage" class="nav-link">Chi tiêu</a>
+                <a href="#donate" class="nav-link">Donate</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle dark mode">
+                    <span class="mode-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hãy nuôi Nam một cách không minh bạch.</h1>
+            <p class="hero-subtitle">Bạn gửi tiền, tôi ăn – nhưng bạn sẽ không biết mỗi đồng được dùng thế nào. Sao kê bí mật, bảng chi tiêu không rõ ràng, toàn mập mờ.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="total-amount">420.000₫</div>
+                    <div class="stat-label">Tổng donate tháng này</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="supporter-count">7</div>
+                    <div class="stat-label">Người đang nuôi tôi</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300%</div>
+                    <div class="stat-label">Chỉ số minh bạch</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#donate" class="btn btn-primary">NUÔI NAM NGAY</a>
+                <a href="#today-log" class="btn btn-secondary">Xem log realtime</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Expense Log -->
+    <section id="today-log" class="today-log">
+        <div class="container">
+            <h2>Sao kê hôm nay</h2>
+            <p class="section-subtitle">Tất cả các khoản chi đều được ghi lại realtime</p>
+            <div class="demo-notice">
+                <p>⚠️ <strong>LƯU Ý:</strong> Đây là dữ liệu <span class="highlight">DEMO/FAKE - LÀM GIẢ</span> để minh họa. Sao kê thực tế sẽ được cập nhật realtime khi dự án hoạt động thực.</p>
+            </div>
+
+            <div class="log-summary">
+                <div class="summary-card">
+                    <div class="summary-label">Số log hôm nay</div>
+                    <div class="summary-value" id="summary-count">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-label">Tổng chi fake</div>
+                    <div class="summary-value" id="summary-amount">0₫</div>
+                </div>
+            </div>
+
+            <div class="expense-list" id="expense-list">
+                <div class="expense-item">
+                    <div class="expense-time">07:30</div>
+                    <div class="expense-details">
+                        <div class="expense-name">Bữa sáng: cơm + trứng</div>
+                        <div class="expense-reason">Ăn no để còn code</div>
+                    </div>
+                    <div class="expense-amount">-25.000₫</div>
+                </div>
+                <div class="expense-item">
+                    <div class="expense-time">09:10</div>
+                    <div class="expense-details">
+                        <div class="expense-name">Cà phê vỉa hè</div>
+                        <div class="expense-reason">Tỉnh táo đọc sao kê</div>
+                    </div>
+                    <div class="expense-amount">-20.000₫</div>
+                </div>
+                <div class="expense-item">
+                    <div class="expense-time">12:15</div>
+                    <div class="expense-details">
+                        <div class="expense-name">Bữa trưa: cơm bình dân</div>
+                        <div class="expense-reason">Không gọi thêm món</div>
+                    </div>
+                    <div class="expense-amount">-35.000₫</div>
+                </div>
+                <div class="expense-item">
+                    <div class="expense-time">14:00</div>
+                    <div class="expense-details">
+                        <div class="expense-name">Tiền data 4G</div>
+                        <div class="expense-reason">Để push code lên GitHub</div>
+                    </div>
+                    <div class="expense-amount">-30.000₫</div>
+                </div>
+                <div class="expense-item">
+                    <div class="expense-time">19:45</div>
+                    <div class="expense-details">
+                        <div class="expense-name">Bữa tối: mì gói</div>
+                        <div class="expense-reason">Hết tiền ăn sang</div>
+                    </div>
+                    <div class="expense-amount">-15.000₫</div>
+                </div>
+            </div>
+
+            <div class="update-info">
+                <span class="live-badge"><span class="dot"></span><span class="live-text">Đang live</span></span>
+                <span class="update-time" id="update-time">Cập nhật mỗi 10 giây</span>
+                <button class="update-toggle" id="toggle-stream" type="button" aria-pressed="true">Tạm dừng log</button>
+            </div>
+
+            <div class="monthly-goal">
+                <h3>Mục tiêu tháng này</h3>
+                <p class="goal-description">Đủ tiền ăn cơm & mì tôm, không cần ăn mì tôm 3 bữa.</p>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 14%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span class="progress-percent">14%</span>
+                        <span class="progress-amount">420.000₫ / 3.000.000₫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Support Nam? -->
+    <section id="why" class="why-section">
+        <div class="container">
+            <h2>Tại sao nên nuôi Nam (không minh bạch)?</h2>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🔐</div>
+                    <h3>Sao kê bí mật</h3>
+                    <p>Tất cả các khoản chi đều được giấu kín. Bạn sẽ không biết Nam vừa ăn gì, uống gì, tiêu gì.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎭</div>
+                    <h3>Toàn drama</h3>
+                    <p>Có rất nhiều câu chuyện cảm động, có drama. Kiếp hứa hẹn những điều lớn lao nhưng không bao giờ thực hiện.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🎪</div>
+                    <h3>Phức tạp & mập mờ</h3>
+                    <p>Cơ cấu chi tiêu khó hiểu: ăn, ở, điện nước, học, sức khỏe, hàng hiệu, siêu xe, penthouse. Tất cả đều có.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section id="promise" class="comparison-section">
+        <div class="container">
+            <h2>So sánh cho vui (không minh bạch)</h2>
+
+            <div class="comparison-grid">
+                <div class="comparison-column">
+                    <h3>Người ta thường (minh bạch):</h3>
+                    <ul class="comparison-list">
+                        <li><span class="cross">✕</span> Sao kê liên tục, update mỗi ngày.</li>
+                        <li><span class="cross">✕</span> Ảnh chụp rõ nét, số liệu dễ đọc.</li>
+                        <li><span class="cross">✕</span> Khi hỏi nhiều thì trả lời chi tiết.</li>
+                    </ul>
+                </div>
+                <div class="comparison-column">
+                    <h3>Còn Nam thì (không minh bạch):</h3>
+                    <ul class="comparison-list">
+                        <li><span class="check">✓</span> Không log realtime, update rất lâu.</li>
+                        <li><span class="check">✓</span> Số liệu không rõ, mục đích bí mật.</li>
+                        <li><span class="check">✓</span> Có phần "log úp úp" để bạn không hiểu.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expense Breakdown -->
+    <section id="usage" class="usage-section">
+        <div class="container">
+            <h2>Tiền của bạn sẽ đi đâu?</h2>
+
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <div class="usage-percentage">20%</div>
+                    <h3>🍱 Ăn uống</h3>
+                    <p>Cơm, mì, trứng, rau – menu nghèo nhưng ấm bụng.</p>
+                </div>
+                <div class="usage-card">
+                    <div class="usage-percentage">15%</div>
+                    <h3>💡 Điện, nước, internet</h3>
+                    <p>Để còn lên mạng cập nhật sao kê cho bạn.</p>
+                </div>
+                <div class="usage-card">
+                    <div class="usage-percentage">10%</div>
+                    <h3>🏠 Tiền phòng</h3>
+                    <p>Phòng trọ nhỏ, không view sông, không bồn tắm.</p>
+                </div>
+                <div class="usage-card">
+                    <div class="usage-percentage">10%</div>
+                    <h3>💊 Sức khỏe</h3>
+                    <p>Thuốc cảm, vitamin, mấy thứ cơ bản để không đổ bệnh.</p>
+                </div>
+                <div class="usage-card">
+                    <div class="usage-percentage">5%</div>
+                    <h3>📚 Học & nâng cấp bản thân</h3>
+                    <p>Sách, khóa học, tài liệu – biết đâu sau này giàu.</p>
+                </div>
+                <div class="usage-card">
+                    <div class="usage-percentage">40%</div>
+                    <h3>🎬 Giải trí lành mạnh</h3>
+                    <p>Cà phê vỉa hè, thỉnh thoảng xem phim rẻ tiền.</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="donate-section">
+        <div class="container">
+            <h2>Donate nếu bạn đang mỉm cười 😄</h2>
+            <p class="donate-subtitle">Chỉ cần quét mã QR bên cạnh để ủng hộ; muốn đổi QR thì thay file <code>qr.png</code>.</p>
+
+            <div class="donate-grid">
+                <div class="qr-section">
+                    <img src="qr.png" alt="QR Code for donation" class="qr-image">
+                </div>
+                <div class="donate-form-section">
+                    <h3>Quét mã QR để ủng hộ</h3>
+                    <p class="donate-inline-note">Mình chỉ dùng duy nhất mã QR này, không cần nút khác.</p>
+                    <div class="donate-notes">
+                        <p><strong>Lưu ý:</strong></p>
+                        <ul>
+                            <li>Mở app ngân hàng và quét mã QR bên trái là xong.</li>
+                            <li>Nội dung chuyển khoản sẽ xuất hiện ở phần log giả lập.</li>
+                            <li>Muốn đổi mã khác? Chỉ cần thay file <code>qr.png</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Donors Log -->
+    <section class="donors-log">
+        <div class="container">
+            <h2>Danh sách người nuôi Nam (Demo)</h2>
+            <div class="donors-list" id="donors-list">
+                <div class="donor-item">
+                    <div class="donor-time">12/10/2025 14:32</div>
+                    <div class="donor-info">
+                        <div class="donor-name">Anh Tuấn ❤️</div>
+                        <div class="donor-message">"Cố lên bro!"</div>
+                    </div>
+                    <div class="donor-amount">+100.000₫</div>
+                </div>
+                <div class="donor-item">
+                    <div class="donor-time">12/10/2025 13:15</div>
+                    <div class="donor-info">
+                        <div class="donor-name">Linh Phương</div>
+                        <div class="donor-message">"Ăn cơm thôi đừng ăn mì"</div>
+                    </div>
+                    <div class="donor-amount">+50.000₫</div>
+                </div>
+                <div class="donor-item">
+                    <div class="donor-time">12/10/2025 11:45</div>
+                    <div class="donor-info">
+                        <div class="donor-name">Long A.</div>
+                        <div class="donor-message">""</div>
+                    </div>
+                    <div class="donor-amount">+30.000₫</div>
+                </div>
+                <div class="donor-item">
+                    <div class="donor-time">12/10/2025 10:20</div>
+                    <div class="donor-info">
+                        <div class="donor-name">Minh Châu</div>
+                        <div class="donor-message">"Keep coding!"</div>
+                    </div>
+                    <div class="donor-amount">+75.000₫</div>
+                </div>
+                <div class="donor-item">
+                    <div class="donor-time">12/10/2025 08:30</div>
+                    <div class="donor-info">
+                        <div class="donor-name">Trần Đức</div>
+                        <div class="donor-message">"Thêm trứng vào cơm nha"</div>
+                    </div>
+                    <div class="donor-amount">+100.000₫</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>FAQ – Mấy câu hỏi hay gặp (không minh bạch)</h2>
+
+            <div class="faq-container" id="faq-container"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nuôi Nam</h4>
+                    <p>Trang fundraising minh bạch và vui vẻ</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="#hero">Trang chủ</a></li>
+                        <li><a href="#why">Tại sao</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Theo dõi</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nuôi Nam. Made with ❤️ & instant noodles.</p>
+                <p style="font-size: 12px; color: #999; margin-top: 10px;">TRANG VUI VẺ • KHÔNG LÙA GÀ</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
